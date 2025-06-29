@@ -1,35 +1,35 @@
 # Statistical Modeling and Simpson's Paradox
 
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Data Sources](#data-sources)
-- [Tools](#tools)
-- [Data Cleaning and Preparation](#data-cleaning-and-preparation)
-- [Exploratory Data Analysis](#exploratory-data-analysis)
-- [Chi-squared Test](#chi-squared-test)
-- [Logistic Regression Model](#logistic-regression-model)
-- [Conclusion](#conclusion)
+- [Project Overview](project-overview)
+- [Data Sources](data-sources)
+- [Tools](tools)
+- [Data Cleaning and Preparation](data-cleaning-and-preparation)
+- [Exploratory Data Analysis](exploratory-data-analysis)
+- [Chi-squared Test](chi-squared-test)
+- [Logistic Regression Model](logistic-regression-model)
+- [Conclusion](conclusion)
 
 
 
-### Project Overview
+## Project Overview
 
 The objective of this project is to create a logistic regression model to analyze effectiveness of kidney stone treatements. 
 
 In 1986, a group of urologists in London published a research paper in The British Medical Journal that compared the effectiveness of two different methods to remove kidney stones. Treatment A was open surgery (invasive), and treatment B was percutaneous nephrolithotomy (less invasive). When they looked at the results from 700 patients, treatment B had a higher success rate. However, when they only looked at the subgroup of patients different kidney stone sizes, treatment A had a better success rate. What is going on here? This known statistical phenomenon is called Simpon’s paradox. Simpon's paradox occurs when trends appear in subgroups but disappear or reverse when subgroups are combined.
 
-### Data Sources
+## Data Sources
 Kidney Stone Data: The dataset for this analysis is the "kidney_stone_data.csv" file which contains data on two different kidney stone treatments. 
 
-### Tools
+## Tools
 - R (tidyverse)
 
-###  Data Cleaning and Preparation
+##  Data Cleaning and Preparation
 In the initial data preparation phase, we performed following tasks:
 1. Data loading and inspection
 2. No cleaning and formatting was needed, no missing values
 
-### Exploratory Data Analysis
+## Exploratory Data Analysis
 EDA involved exploring the kidney data to answer the following questions:
 - Which treatment has a higher success rate?
 - Does kidney stone size effect the success of each treatment?
@@ -89,7 +89,7 @@ This population was evenly split with 350 patients in each treatment group, but 
 
 Stone size may be a confounding variable in this study, we can assess this with a Chi-squared test. The null hypothesis for this test will be that these variables are not associated while the alternative hypothesis is that these variables do have an association. The significance level will be 0.05.
 
-### Chi-squared Test
+## Chi-squared Test
 ```R
 # Chi-squared test
 
@@ -98,7 +98,7 @@ chi_test
 ```
 With the p-value being below the significance level, we will reject the null hypothesis and accept that there is an association between stone size and treatment group. Our next step is to perform a logistic regression to better understand how stone size and treatment type infleunce the success of treatment, we will again be using a significance level of 0.05.
 
-### Logistic Regression Model
+## Logistic Regression Model
 ```R
 # Import broom package 
 library(broom)
@@ -115,7 +115,7 @@ logistic_model <-
 tidy_model <-
     tidy(logistic_model, exponentiate = TRUE)
 ```
-### Conclusion
+## Conclusion
 -Intercept(Treatment A, Large Stone): The estimate of 2.81 indicates that for the baseline group, the odds of treatment success are about 2.81
 -treatmentB(Treatment A vs Treatment B): The estimate of .70 indicates that this group has 30% lower odds of success than the Intercept group. With the p-value being large than 0.05, we can not conclude that changing treatment has a statistically significant impact on success.
 -stone_sizesmall(Small vs Large stone): The estimate of 3.53 indicates that regardless of treatment type, patients with small stones have a 3.53 higher odds of success than patients with large stones. The p-value being below 0.05 indicates that this is statistically significant.
