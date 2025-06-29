@@ -1,4 +1,4 @@
-# Statistical Modelling and Simpson's Paradox
+# Statistical Modeling and Simpson's Paradox
 
 ## Table of Contents
 - [Project Overview](#project-overview)
