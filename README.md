@@ -1,14 +1,14 @@
 # Statistical Modeling and Simpson's Paradox
 
 ## Table of Contents
-- [Project Overview](project-overview)
-- [Data Sources](data-sources)
-- [Tools](tools)
-- [Data Cleaning and Preparation](data-cleaning-and-preparation)
-- [Exploratory Data Analysis](exploratory-data-analysis)
-- [Chi-squared Test](chi-squared-test)
-- [Logistic Regression Model](logistic-regression-model)
-- [Conclusion](conclusion)
+- [Project Overview](#project-overview)
+- [Data Sources](#data-sources)
+- [Tools](#tools)
+- [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+- [Exploratory Data Analysis](#exploratory-data-analysis)
+- [Chi-squared Test](#chi-squared-test)
+- [Logistic Regression Model](#logistic-regression-model)
+- [Conclusion](#conclusion)
 
 
 
